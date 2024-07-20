@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+    <link rel="stylesheet" href="productos.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinos Café</title>
+</head>
+<body>
+    <div class="overlay" id="overlay">
+        <div class="overlay-content">
+            <h2>Selecciona un producto</h2>
+            <form id="productForm">
+                <label for="producto">Elige un producto:</label>
+                <select id="producto" name="producto">
+                    <option value="prod2.html">Producto 1</option>
+                    <option value="prod3.html">Producto 2</option>
+                    <option value="prod4.html">Producto 3</option>
+                    <option value="prod5.html">Producto 4</option>
+                </select>
+                <button type="button" onclick="redirigir()">Ir a Producto</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const overlay = document.getElementById('overlay');
+            overlay.style.display = 'flex'; 
+
+            function redirigir() {
+                const select = document.getElementById('producto');
+                const productoSeleccionado = select.value;
+                if (productoSeleccionado) {
+                    window.location.href = productoSeleccionado;
+                } else {
+                    alert('Por favor, selecciona un producto.');
+                }
+            }
+
+            document.querySelector('button').addEventListener('click', redirigir);
+        });
+    </script>
+</body>
+</html>

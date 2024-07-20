@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinos Café</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="recetas.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body data-bs-theme="ligth">
+    <!--Navar-->
+    <header>
+        <!-- ligthdarkmode -->
+        <button onclick="cambiarTema()" class="btn rounded-fill"><i id="di-icon" class="fa-solid fa-moon"></i></button>
+        <a href="index.html" class="logo">
+            <img src="img/logo.png" alt="">
+        </a>
+        <!-- Links -->
+        <nav class="navbar">
+            <input type="checkbox" id="sidebar-active">
+            <label for="sidebar-active" class="close-sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+            </label>
+     
+            <div class="links-container">
+                <label for="sidebar-active" class="close-sidebar-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                </label>
+    
+                <a class="home-link" href="index.html">INICIO</a>
+                <a href="historia.html">HISTORIA</a>
+                <a href="recetas.html">RECETARIO</a>
+                <a href="encuentranos.html">ENCUÉNTRANOS</a>
+                <a href="personal.html">PERSONAL</a>
+                <a href="productos.html">PRODUCTOS</a>
+                <a  href="carta.html">CARTA</a>
+            </div>
+        </nav>
+        <!-- Icon -->
+         <div class="header-icon">
+            <a href="login.html"><i class="fa-solid fa-user"></i></a>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+        </div>
+        <!-- Search box -->
+         <div class="search-box">
+            <input type="search" name="" id="" placeholder="Buscar aquí...">
+         </div>
+    </header>
+    <!-- Intro -->
+    <section class="intro" id="intro">
+        <div class="intro-text">
+            <h1>Destinos:<br> Cada taza, un viaje</h1>
+            <p>
+                "Recetario de Café en Línea" para descubrir una selección exclusiva de recetas cautivadoras.<br>
+                 Desde los clásicos reconfortantes hasta las creaciones contemporáneas, sumérgete en un viaje<br> sensorial que despertará tus sentidos y elevará tu amor por el café.<br>
+                  ¡Bienvenido a tu fuente de inspiración cafetera en la web!
+            </p>
+            <a href="index.html" class="btn" id="click">Inicio</a>
+        </div>
+        <div class="home-img">
+            <img src="img/main.png" width="30px"alt="">
+        </div>
+    </section>
+    <!-- Products -->
+    <main>
+        <div id="carouselExample" class="carousel carousel-dark slide d-none d-sm-block" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card-wrapper">
+                        <div class="card">
+                            <div class="image-wrapper">
+                            <img src="img/frappes.jpg" class="card-img-top" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">FRAPPES</h5> <br>
+                                <p class="card-text">Sumérgete en el mundo de los frappés con nuestras deliciosas recetas. ¡Frescura y en sabor helado te esperan!</p>
+                                <a type="button" id="btn" class="btn btn-primary">Click Aquí</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="image-wrapper">
+                            <img src="img/postres.jpg" class="card-img-top" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">POSTRES</h5> <br>
+                                <p class="card-text">Descubre algunas  de nuestras recetas fáciles y deliciosas para disfrutar el sabor del café en tus postres favoritos.</p>
+                                <a type="button" id="btn" class="btn btn-primary">Click Aquí</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="image-wrapper">
+                            <img src="img/bebidas-ca.jpg" class="card-img-top" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">BEBIDAS CALIENTES</h5><br>
+                                <p class="card-text">Explora nuestro recetario de bebidas calientes a base de café. ¡Sabores intensos y reconfortantes en cada taza!</p>
+                                <a type="button" id="btn" class="btn btn-primary">Click Aquí</a>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="carousel-item">
+                    <div class="card-wrapper">
+                        <div class="card">
+                            <div class="image-wrapper">
+                            <img src="img/bebidas-fi.jpg" class="card-img-top" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">BEBIDAS FRÍAS</h5> <br>
+                                <p class="card-text">Disfruta de nuestra selección de recetas refrescantes con un buen café. <br>¡Sabor y frescura en cada sorbo!</p>
+                                <a type="button" id="btn" class="btn btn-primary">Click Aquí</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="image-wrapper">
+                            <img src="img/bebidas-alc.jpg" class="card-img-top" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"> BEBIDAS ALCOHÓLICAS</h5>
+                                <p class="card-text">Descubre estas emocionantes combinaciones de café y licores en nuestro recetario de bebidas alcohólicas.</p><br>
+                                <a type="button" id="btn" class="btn btn-primary">Click Aquí</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="image-wrapper">
+                            <img src="img/Metodos.jpg" class="card-img-top" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">¡NUESTROS MÉTODOS!</h5>
+                                <p class="card-text"> Descubre diversas formas de preparar el café con nuestra guía de métodos. ¡Un buen aroma y sabor en cada taza!</p> <br>
+                                <a type="button" id="btn" class="btn btn-primary">Click Aquí</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div id="carouselExampleSmallScreen" class="carousel slide d-sm-none" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card">
+                        <div class="image-wrapper">
+                        <img src="img/frappes.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">FRAPPES</h5>
+                            <a type="button" id="btn" class="btn btn-primary">Click Aquí</a>
+                        </div>
+                    </div>  
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="image-wrapper">
+                        <img src="img/postres.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">POSTRES</h5>
+                            <a type="button" id="btn" class="btn btn-primary">Click Aquí</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="image-wrapper">
+                        <img src="img/bebidas-ca.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">BEBIDAS CALIENTES</h5>
+                            <a type="button" id="btn" class="btn btn-primary">Click Aquí</a>
+                        </div>
+                    </div>
+                </div>                 
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="image-wrapper">
+                        <img src="img/bebidas-fi.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">BEBIDAS FRÍAS</h5>
+                            <a type="button" id="btn" class="btn btn-primary">Click Aquí</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="image-wrapper">
+                        <img src="img/bebidas-alc.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">BEBIDAS ALCOHÓLICAS</h5>
+                            <a type="button" id="btn" class="btn btn-primary">Click Aquí</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="image-wrapper">
+                        <img src="img/Metodos.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">¡NUESTROS MÉTODOS!</h5>
+                            <a type="button" id="btn" class="btn btn-primary">Click Aquí</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSmallScreen" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSmallScreen" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!-- Recetas -->
+        <section class="inf" id="infor">
+            <div class="inf-img">
+                <img src="img/coffee.png" alt="">
+            </div>
+            <div class="inf-text">
+                <h2>¿Sabías qué?</h2>
+                <p>La leyenda más conocida sobre el origen del café proviene de Etiopía en el siglo IX.
+                Así, Según la historia, un pastor de cabras llamado Kaldi observó que sus cabras se volvían muy enérgicas después de comer unas cerezas rojas de un arbusto. Intrigado, Kaldi probó las cerezas y descubrió que también le daban mucha energía. Llevó las cerezas a un monje local, quien las utilizó para mantenerse despierto durante largas horas de oración. Así, el conocimiento de las propiedades energizantes del café comenzó a extenderse.</p>
+            </div>
+        </section>
+        <section> 
+            <br>
+            <h1>PRUEBA EL CAFÉ COMO UN PROFESIONAL <i class="fa-solid fa-mug-hot"></i></h1>
+            <div class="move">
+                <img src="img/move.png" alt="">
+            </div>
+            <div class="card-area">
+                <div class="wrapper">
+                    <div class="box-area">
+                        <div class="box">
+                        <img src="img/oler.jpg" width="100%" height="100%" alt="">
+                            <div class="overlay">
+                                <h3>OLER</h3>
+                                <p>Acerca la nariz a la superficie del café para evaluar su aroma. La mayoría de los sabores que percibimos al “degustarlo” en realidad los capta nuestro sentido del olfato.</p>
+                            </div>
+                        </div>
+                        <div class="box">
+                        <img src="img/sorber.jpg" alt="">
+                            <div class="overlay">
+                                <h3>SORBER</h3>
+                                <p>En este caso, se recomienda sorber, ya que ayuda a airear el café y a distribuirlo por toda la boca, llegando a todas las papilas gustativas.</p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <img src="img/time.jpg" height="100%" alt="">
+                            <div class="overlay">
+                                <h3>SABOREAR</h3>
+                                <p class="time">Saborea los sabores durante 15 segundos mientras tu cerebro está en modo sensorial. ¿Qué saboreas? ¿Qué te hace sentir? ¡Ten paciencia! A veces, la descripción que quieres llegará con más tiempo.</p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <img src="img/happy.jpg"  alt="">
+                            <div class="overlay">
+                                <h3>DISFRUTAR</h3>
+                                <p>Degustar el café lentamente nos permite apreciar cada pequeño detalle de su perfil de sabor.</p>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <section class="footer">
+        <div class="footer-box">
+            <h2>"DESTINOS: CADA TAZA UN VIAJE"</h2>
+            <br>
+            <p>Síguenos en nuestras redes:</p>
+            <div class="social">
+                <a href="https://www.facebook.com/profile.php?id=100094215152673&mibextid=LQQJ4d"><i class="fa-brands fa-facebook"></i>
+                <a href="https://www.facebook.com/profile.php?id=100094215152673&mibextid=LQQJ4d"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/destino_cafe_oxapampa?igsh=bmx6dXFxbTR4dTIw"><i class="fa-brands fa-threads"></i></a>
+                <a href="https://www.instagram.com/destino_cafe_oxapampa?igsh=bmx6dXFxbTR4dTIw"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@destino.caf.oxapa?_t=8nnNgCsgWCE&_r=1"><i class="fa-brands fa-tiktok"></i></i></a>
+            </div>
+        </div>
+        <div class="footer-box">
+            <h3>SOPORTE</h3>
+            <li><a href="#">Ayuda</a></li>
+            <li><a href="#">Devoluciones</a></li>
+            <li><a href="#">Politica de privacidad</a></li>
+            <li><a href="#">Libro de reclamaciones</a></li>
+        </div>
+        <div class="footer-box">
+            <h3>GUÍAS</h3>
+            <li><a href="#about">Nuestra historia</a></li>
+            <li><a href="recetas.html">Recetas con café</a></li>
+            <li><a href="encuentranos.html">Encuentranos</a></li>
+            <li><a href="personal.html">Personal</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="carta.html">Nuestra Carta</a></li>
+        </div>
+        <div class="footer-box">
+            <h3>CONTÁCTANOS</h3>
+            <div class="contact">
+                <span><i class="fa-solid fa-map"></i>Perú - Oxapampa</span>
+                <span><i class="fa-solid fa-phone"></i>+51 999 999 999</span>
+                <span><i class="fa-brands fa-whatsapp"></i>+51 999 999 999</span>
+                <span><i class="fa-brands fa-linkedin"></i>DestinosCafé</span>
+                <span><i class="fa-solid fa-envelope"></i>geraktt@gmail.com</a></span>
+            </div>
+        </div>
+    </section>
+    <!-- Copyright -->
+    <div class="copyright">
+        <p>&#169;Grupo A | All Rigth Reserved 2024 </p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
